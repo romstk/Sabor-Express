@@ -1,9 +1,16 @@
 from modelos.restaurante import Restaurante
+from modelos.cardapio.bebida import Bebida
+from modelos.cardapio.prato import Prato
 
+# Instanciamos este restaurante e fazemos a avaliação e listamos os dados do mesmo mas só se o usuário responder que quer avaliar, senão o sistema não faz a parte de avaliação e listagem dos restaurantes instanciados.  
 restaurante_praca = Restaurante('praça', 'gourmet')
 
+bebida_suco = Bebida('Suco de Melancia', 5.0, 'grande')
+prato_paozinho = Prato('Pãozinho', 2.0, 'O melhor pão da cidade ')
 
-print('Você vai informar o nome e nota para o restaurante. Pode informar quantas avaliações quisee entre 1 e 5. Para encerrar inform N') 
+
+
+print('Você vai informar o nome e nota para o restaurante. Pode informar quantas avaliações quiser entre 1 e 5. Para encerrar inform N') 
 resp = input('Deseja avaliar ? ').upper()
 while resp == 'S':
     nome = input('Informe o nome: ')
@@ -14,10 +21,15 @@ while resp == 'S':
     resp = input('Continuar avaliando ?').upper()
 
 
+if restaurante_praca.media_avaliacoes != '-':
+    Restaurante.alternar_estado(restaurante_praca)    
+    Restaurante.listar_restaurantes()
+
 
 def main():
-    Restaurante.alternar_estado(restaurante_praca)
-    Restaurante.listar_restaurantes()
+    print(bebida_suco)
+    print(prato_paozinho)
+    
     
 
 # ponto de inicio do programa, 
