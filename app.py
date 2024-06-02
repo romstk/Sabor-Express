@@ -7,6 +7,8 @@ restaurante_praca = Restaurante('praça', 'gourmet')
 
 bebida_suco = Bebida('Suco de Melancia', 5.0, 'grande')
 prato_paozinho = Prato('Pãozinho', 2.0, 'O melhor pão da cidade ')
+restaurante_praca.adicionar_no_cardapio(bebida_suco)
+restaurante_praca.adicionar_no_cardapio(prato_paozinho)
 
 
 
@@ -23,12 +25,11 @@ while resp == 'S':
 
 if restaurante_praca.media_avaliacoes != '-':
     Restaurante.alternar_estado(restaurante_praca)    
-    Restaurante.listar_restaurantes()
+    Restaurante.listar_restaurantes
 
 
 def main():
-    print(bebida_suco)
-    print(prato_paozinho)
+    restaurante_praca.exibir_cardapio
     
     
 
